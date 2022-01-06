@@ -1,0 +1,25 @@
+table.thead.tr {
+	background-color: gray;
+}
+table tbody tr td {
+	border: 1px solid black
+}
+.logout-btn{
+   
+    color: #fff;
+    padding: 5px;
+    background: #19b3d3;
+    border-radius: 2px;
+    font-size: 15px;
+    font-weight: 900;
+    color: #fff;
+}
+.logout-btn:hover{
+    background:  #ff33ff;
+}
+.invoice{
+	border: 1.5px solid #fdf;
+	border-radius: 5px;
+	outline: 10px solid #B1B4B9 ;
+   
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet" th:href="@{/css/home.css}">
+<title>Home Page</title>
+</head>
+<body>
+
+
+
+
+	<div class="main-container justify-content-center container-fluid">
+		<div class="bg-info text-center">
+			<h2>Your selected products</h2>
+		</div>
+		<div class="container">
+
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr>
+						<th scope="col">product id</th>
+						<th scope="col">Product name</th>
+						<th scope="col">Category</th>
+						<th scope="col">Single price</th>
+						<th scope="col">Quantity</th>
+						<th scope="col">Sub total</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="mc:${mycart}">
+						<td th:text="${mc.id}"></td>
+						<td th:text="${mc.productName}"></td>
+						<td th:text="${mc.category}"></td>
+						<td th:text="${mc.price}"></td>
+						<td th:text="${mc.quantity}"></td>
+						<td th:text="${mc.price*mc.quantity}"></td>
+					</tr>
+					<tr>
+						<td colspan="5" class="text-end">Total bill =</td>
+						<td th:text="${total}"></td>
+					</tr>
+
+				</tbody>
+			</table>
+			<div class="text-end">
+				<h4>
+					<a href="home">Add more products</a>
+				</h4>
+			</div>
+			<div class="container">
+	
+				<div class="d-flex justify-content-center">
+					<h3>Provides your personal information</h3>
+				</div>
+				<!-- Personal address -->
+				<form action="invoice" method="post">
+					<div class="mb-3">
+						<label class="form-label">Name</label> <input type="text"
+							class="form-control" name="name" th:value="${user.name}"
+							placeholder="Enter your name">
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Email</label> <input type="email"
+							class="form-control" name="email" th:value="${user.email}"
+							placeholder="">
+					</div>
+			
+					<div class="mb-3">
+						<label class="form-label">Address</label> <input type="text"
+							class="form-control" name="address"
+							placeholder="Enter your full adderess">
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Payment way</label> <select
+							class="form-select" aria-label="Default select example"
+							name="paymentMethod">
+							<option selected>Select payment way</option>
+							<option value="Online payment">Online payment</option>
+							<option value="Cash on delivery">Cash on delivery</option>
+						</select>
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Transaction id</label> <input
+							type="text" class="form-control" name="transaction"
+							placeholder="Enter transaction id"> <label
+							class="form-label text-danger">*If you select Online
+							payment you must enter transaction id</label>
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Mobile</label> <input type="text"
+							class="form-control" name="phone" th:value="${user.phone}"
+							placeholder="Enter your Phone number">
+					</div>
+					<button type="submit" class="btn btn-primary form-control mb-5">Submit</button>
+				</form>
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<div th:insert="footer.html :: footer"></div>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

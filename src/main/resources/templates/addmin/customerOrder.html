@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<title>Insert title here</title>
+</head>
+<body>
+	<div style="height: 70px;" class="bg-info container-fluid p-3">
+		<a href="returnAddminPage">Addmin</a>
+	</div>
+	<div class="container mt-3">
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th scope="col">SL.</th>
+					<th scope="col">email</th>
+					<th scope="col">Customer name</th>
+					<th scope="col">Phone</th>
+					<th scope="col">Product name</th>
+					<th scope="col">Price</th>
+					<th scope="col">Quantity</th>
+					<th scope="col">Order date</th>
+					<th scope="col" colspan="2" class="text-center">Status</th>
+
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="s:${customer}">
+					<td th:text="${s.sl}"></td>
+					<td th:text="${s.customerName}"></td>
+					<td th:text="${s.email}"></td>
+					<td th:text="${s.phone}"></td>
+					<td th:text="${s.productName}"></td>
+					<td th:text="${s.price}"></td>
+					<td th:text="${s.quantity}"></td>
+					<td th:text="${s.orderdate}"></td>
+					<td>
+						<form action="deleteFromOrders" method="POST">
+							<input type="hidden" name="sl" th:value="${s.sl}"> <input style="border:0px; color: green"
+								type="submit" value="Prossecing">
+						</form>
+					</td>
+					<td>
+						<form action="deleteFromOrders" method="POST">
+							<input type="hidden" name="sl" th:value="${s.sl}"> <input style="border:0px; color: red"
+								type="submit" value="Remove">
+						</form>
+					</td>
+
+
+
+
+				</tr>
+
+
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>

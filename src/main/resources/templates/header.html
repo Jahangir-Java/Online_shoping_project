@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headerfiles">
+<meta charset="ISO-8859-1">
+
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+<body>
+	<div th:fragment="bar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+					
+						<li class="nav-item mr-3"><a class="nav-link active"
+							aria-current="page" href="home"> <img
+								th:src="@{/images/home.png}" alt="image">Home
+
+						</a></li>
+
+						<li class="nav-item mr-3"><a class="nav-link active"
+							aria-current="page" href="mycart"> <b th:if="${size}"
+								th:text="${size}"></b> <img th:src="@{/images/cart.png}"
+								alt="image"> My cart
+						</a></li>
+
+					
+						<li class="nav-item mr-3"><a class="nav-link active"
+							aria-current="page" href="messageUs"> <img
+								th:src="@{/images/message.jpg}" alt="image">Message us
+						</a></li>
+
+						<li class="nav-item mr-3"><a class="nav-link active"
+							aria-current="page" href="aboutUs"> <img
+								th:src="@{/images/aboutus.png}" alt="image">About us
+						</a></li>
+
+						<li class="nav-item mr-3"><a class="nav-link active"
+							aria-current="page" href="logout"> <img
+								th:src="@{/images/logout.png}" alt="image">Logout
+						</a></li>
+						<li class="nav-item mr-3"><a class="nav-link active"
+							aria-current="page" href="addminLogin"> <img
+								th:src="@{/images/profile.jpg}" alt="image">ADDMIN
+
+						</a></li>
+
+
+					</ul>
+					<form class="d-flex" action="search" method="POST">
+						<input class="form-control me-2" type="search" name="pid"
+							placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success" type="submit">Search</button>
+					</form>
+
+
+
+				</div>
+			</div>
+
+		</nav>
+		<div class="justify-content-between w-25 mb-3 mt-3"></div>
+
+	</div>
+
+
+	<!-- Bootstrap JS -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

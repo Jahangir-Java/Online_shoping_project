@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<title>Home Page</title>
+</head>
+<body>
+	<table class="table table-striped table-hover">
+		<thead>
+			<tr>
+				<th scope="col">Email</th>
+				<th scope="col">Phone</th>
+				<th scope="col">Address</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="t:${testFor}">
+				<td th:text="${t.email}"></td>
+				<td th:text="${t.phone}"></td>
+				<td th:text="${t.address}"></td>
+			</tr>
+
+
+		</tbody>
+	</table>
+
+
+</body>
+</html>

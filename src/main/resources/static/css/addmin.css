@@ -1,0 +1,39 @@
+.main {
+	height: 100vh;
+}
+
+.header {
+	height: 70px;
+	position: fixed;
+}
+
+thead {
+	position: sticky;
+	top: 0;
+	background-color: white;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+} 
+
+
+
+button a:hover {
+	color: white;
+}
+
+.searchBar {
+	padding: 20px;
+}
+
+.maindiv {
+	height: calc(100vh - 120px);
+	display: flex;
+}
+
+.tbl-main {
+	width: calc(100vw - 250px);
+	overflow-y: scroll;
+}
